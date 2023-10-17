@@ -1,4 +1,3 @@
-import { Header } from '@/components/header'
 import './globals.css'
 
 import localFont from 'next/font/local'
@@ -21,7 +20,6 @@ export default function RootLayout({
       <body
         className={`h-screen bg-seaFort bg-cover bg-center bg-no-repeat text-white ${manuskript.className}`}
       >
-        <Header />
         {children}
       </body>
     </html>

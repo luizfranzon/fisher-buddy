@@ -12,6 +12,11 @@ const config: Config = {
         seaFort: "url('../assets/background.jpg')",
         headerBanner: "url('../assets/header-first-layer.svg')",
         headerSubLayer: "url('../assets/header-sub-layer.svg')",
+        progressBarBorder: "url('../assets/progress.svg')",
+      },
+      colors: {
+        oceanBlue: '#33CEB1',
+        progressGray: '#272727',
       },
     },
   },
