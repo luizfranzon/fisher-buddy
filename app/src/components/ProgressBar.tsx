@@ -1,24 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface ProgressBarProps {
   progress: number
   width?: number
   height?: number
+  className?: string
 }
 
 export function ProgressBar({
   progress = 0,
-  width = 1015,
+  width = 700,
   height = 125,
+  className,
 }: ProgressBarProps) {
   if (progress < 0 || progress > 100) {
     throw new Error('Progress must be between 0 and 100')
   }
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  window.addEventListener('resize', () => {
+    setScreenWidth(window.innerWidth)
+  })
+
   const progressBarPercantageMultipliedBy10 = progress * 10
+
+  console.log(screenWidth)
+
+  if (screenWidth >= 736) {
+    width = 700
+  } else if (screenWidth < 736 && screenWidth > 536) {
+    width = 500
+  } else if (screenWidth <= 536) {
+    width = 340
+  }
 
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
