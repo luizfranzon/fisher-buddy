@@ -25,8 +25,6 @@ export function ProgressBar({
 
   const progressBarPercantageMultipliedBy10 = progress * 10
 
-  console.log(screenWidth)
-
   if (screenWidth >= 736) {
     width = 700
   } else if (screenWidth < 736 && screenWidth > 536) {
