@@ -5,9 +5,9 @@ import { useContextFishesData } from "@/context/ContextFishesData";
 export function ProgressBarSection() {
 
   const [porcentage, setPorcentage] = useState(0)
-  const [totalFishes, setTotalFishes] = useState(1050)
+  const [totalFishes, setTotalFishes] = useState(0)
 
-  const { fishesData, setFishesData } = useContextFishesData()
+  const { fishesData } = useContextFishesData()
 
   useEffect(() => {
     let totalFishes = 0

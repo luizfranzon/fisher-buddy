@@ -17,19 +17,21 @@ export function ProgressBar({
     throw new Error('Progress must be between 0 and 100')
   }
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState<number>()
 
-  window.addEventListener('resize', () => {
-    setScreenWidth(window.innerWidth)
-  })
+  if (typeof window !== "undefined") {
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth)
+    })
+  }
 
   const progressBarPercantageMultipliedBy10 = progress * 10
 
-  if (screenWidth >= 736) {
+  if (screenWidth! >= 736) {
     width = 700
-  } else if (screenWidth < 736 && screenWidth > 536) {
+  } else if (screenWidth! < 736 && screenWidth! > 536) {
     width = 500
-  } else if (screenWidth <= 536) {
+  } else if (screenWidth! <= 536) {
     width = 340
   }
 
